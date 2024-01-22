@@ -1,6 +1,6 @@
-/* import fs from "fs"
+ import fs from "fs"
 import inquirer from "inquirer";
-import readmetemplate from "./util/readmetemplate";
+//import readmetemplate from "./util/readmetemplate";
 
 inquirer
   .prompt([
@@ -74,86 +74,60 @@ inquirer
         validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
     },
   ])
-  .then((response) => 
-  
-  console.log(response)
-  ); */
 
-  import fs from 'fs';
-import inquirer from 'inquirer';
-import generateReadme from './util/readmetemplate';
+  .then((answers) => {
+   // Generate the README content
+   const readmeContent = generateREADME(answers);
 
-// Function to write the README file
-const writeToFile = (fileName, data) => {
-  fs.writeFile(fileName, data, (err) =>
-    err ? console.error(err) : console.log('README.md generated successfully!')
-  );
-};
+   // Write the README file
+   fs.writeFileSync('./generated-readme/README.md', readmeContent, 'utf8');
+ 
+   console.log('README.md generated successfully!');
+  //console.log(answers)
+}); 
 
-// Inquirer prompts
-inquirer
-  .prompt([
-    {
-      type: 'input',
-      message: 'What is the title of your project?',
-      name: 'title',
-      validate: (value) => (value ? true : 'Please type some text to continue'),
-    },
-    {
-      type: 'input',
-      message: 'What is your GitHub username?',
-      name: 'githubName',
-      validate: (value) => (value ? true : 'Please type some text to continue'),
-    },
-    {
-      type: 'input',
-      message: 'What is your GitHub URL?',
-      name: 'githubURL',
-      validate: (value) => (value ? true : 'Please type some text to continue'),
-    },
-    {
-      type: 'input',
-      message: 'Please enter a short description of your project',
-      name: 'description',
-      validate: (value) => (value ? true : 'Please type some text to continue'),
-    },
-    {
-      type: 'list',
-      message: 'Choose a license for your application from the list of provided',
-      name: 'license',
-      choices: ['MIT', 'GNU v3.0', 'Apache License 2.0', 'BSD 3-Clause', 'N/A'],
-      validate: (value) => (value ? true : 'Please type some text to continue'),
-    },
-    {
-      type: 'input',
-      message: 'What command should be run to install dependencies?',
-      name: 'installation',
-      validate: (value) => (value ? true : 'Please type some text to continue'),
-    },
-    {
-      type: 'input',
-      message: 'What does the user need to know about using the repo?',
-      name: 'usage',
-      validate: (value) => (value ? true : 'Please type some text to continue'),
-    },
-    {
-      type: 'input',
-      message: 'What does the user need to know about contributing to the repo?',
-      name: 'contribution',
-      validate: (value) => (value ? true : 'Please type some text to continue'),
-    },
-    {
-      type: 'input',
-      message: 'What command should be run for testing?',
-      name: 'tests',
-      validate: (value) => (value ? true : 'Please type some text to continue'),
-    },
-  ])
-  .then((response) => {
-    // Generate README content based on user responses
-    const readmeContent = generateReadme(response);
+  // Function to generate the README content
+function generateREADME(answers) {
+  return `
+# ${answers.title}
+${renderLicenseBadge(answers.license)}
 
-    // Write README content to a file
-    writeToFile('README.md', readmeContent);
-  })
-  .catch((error) => console.error(error));
+## Description
+${answers.description}
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Installation
+${answers.installation}
+
+## Usage
+<!-- Add usage information here -->
+
+## License
+This project is licensed under the ${answers.license} License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+<!-- Add contributing guidelines here -->
+
+## Tests
+<!-- Add information about how to run tests here -->
+
+## Questions
+If you have any questions, feel free to contact me:
+- GitHub: [${answers.githubName}](https://github.com/${answers.githubName})
+- Email: ${answers.email}
+`;
+}
+
+function renderLicenseBadge(license) {
+  if (license !== "none") {
+    return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+  }
+  return "";
+}

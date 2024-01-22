@@ -1,8 +1,9 @@
 
-# RODEO
+# answers
+![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-About a rodeo rodeo
+answers
 
 ## Table of Contents
 - [Installation](#installation)
@@ -13,7 +14,7 @@ About a rodeo rodeo
 - [Questions](#questions)
 
 ## Installation
-npm i
+answers
 
 ## Usage
 <!-- Add usage information here -->
@@ -29,5 +30,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Questions
 If you have any questions, feel free to contact me:
-- GitHub: [undefined](https://github.com/undefined)
+- GitHub: [answers](https://github.com/answers)
 - Email: undefined
