@@ -12,30 +12,28 @@ function createLicenseBadge(license) {
   ${createLicenseBadge(data.license)}
   ## Description
   ${data.description}
+  ## Github Name
+  ${data.githubName}
   ## Deployed Application URL
   ${data.githubURL}
-  ## Screenshot
-  ![alt-text](${data.screenshot})
   ## Table of Contents
-  * [Features](#features)
-  * [Languages & Dependencies](#languagesanddependencies)
-  * [How to Use This Application](#HowtoUseThisApplication)
   * [Contributors](#contribution)
+  * [Installation](#installation)
+  * [Usage](#usage)
   * [Testing](#tests)
   * [Questions](#questions)
-  ## Features
-  ${data.features}
-  ## Languages & Dependencies
-  ${data.require}
-  ## How to Use This Application:
   ${data.usage}
   ## Contributors
-  ${data.contributors}
+  ${data.contribution}
+  ## Installation
+  ${data.installation}
+  ## Usage
+  ${data.usage}
   ## Testing
-  ${data.test}
+  ${data.tests}
   ## Questions
   Please send your questions [here](mailto:${data.email}?subject=[GitHub]%20Dev%20Connect) or visit [github/${data.creator}](https://github.com/${data.creator}).
   `;
   }
   
-  module.exports = readmeTemplate;
+  module.exports = readmetemplate;
