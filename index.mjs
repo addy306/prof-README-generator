@@ -1,6 +1,6 @@
  import fs from "fs"
 import inquirer from "inquirer";
-//import readmetemplate from "./util/readmetemplate";
+import generateREADME from "./util/generateMarkdown.mjs";
 
 inquirer
   .prompt([
@@ -86,7 +86,7 @@ inquirer
   //console.log(answers)
 }); 
 
-  // Function to generate the README content
+ /*  // Function to generate the README content
 function generateREADME(answers) {
   return `
 # ${answers.title}
@@ -131,3 +131,4 @@ function renderLicenseBadge(license) {
   }
   return "";
 }
+ */
