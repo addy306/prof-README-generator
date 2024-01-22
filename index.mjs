@@ -32,18 +32,13 @@ inquirer
        validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
       },
       {
-        type: 'List',
-        message: 'Choos a license for your application from the list of provided',
+        type: 'list',
+        message: 'Choose a license for your application from the list of provided',
         name: 'license',
-        choices:  [
-            'MIT',
+        choices:['MIT',
             'GNU  v3.0',
             'Apache License 2.0',
             'BSD 3-Clause',
-            'Mozilla Public  2.0',
-            'The Unlicense',
-            'ISC',
-            'Creative Commons Zero v1.0 Universal',
             'N/A'
           ],
         // Validate user entry to make sure user types an input
@@ -52,9 +47,32 @@ inquirer
       {
         type: 'input',
         message: 'What command should be run to install dependencies?',
-        name: 'dependencies',
+        name: 'installation',
         // Validate user entry to make sure user types an input
        validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
       },
+      {
+        type: "input",
+        message: "What does the user need to know about using the repo?",
+        name: "usage",
+         // Validate user entry to make sure user types an input
+       validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
+    },
+    {
+        type: "input",
+        message: "What does the user need to know about contributing to the repo?",
+        name: "contribution",
+        // Validate user entry to make sure user types an input
+       validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
+    },
+    {
+        type: "input",
+        message: "What command should be run for testing?",
+        name: "tests",
+        // Validate user entry to make sure user types an input
+        validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
+    },
   ])
-  .then((response) => renderHtml(response));
+  .then((response) => 
+  console.log(response)
+  );
