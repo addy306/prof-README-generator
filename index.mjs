@@ -13,6 +13,13 @@ inquirer
     },
     {
       type: 'input',
+      message: 'What is your email address?',
+      name: 'email',
+      // Validate user entry to make sure user types an input
+      validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
+    },
+    {
+      type: 'input',
       message: 'What is your GitHub username?',
       name: 'githubName',
       // Validate user entry to make sure user types an input
@@ -20,7 +27,7 @@ inquirer
     },
     {
         type: 'input',
-        message: 'What is your GitHub URL?',
+        message: 'What is your Deployed GitHub URL?',
         name: 'githubURL',
         // Validate user entry to make sure user types an input
         validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
@@ -49,6 +56,7 @@ inquirer
         type: 'input',
         message: 'What command should be run to install dependencies?',
         name: 'installation',
+        default: "npm i",
         // Validate user entry to make sure user types an input
        validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
       },
@@ -70,6 +78,7 @@ inquirer
         type: "input",
         message: "What command should be run for testing?",
         name: "tests",
+        default: "npm test",
         // Validate user entry to make sure user types an input
         validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
     },

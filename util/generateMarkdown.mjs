@@ -4,6 +4,9 @@
 # ${answers.title}
 ${renderLicenseBadge(answers.license)}
 
+## Deployed page
+${answers.githubURL}
+
 ## Description
 ${answers.description}
 
@@ -15,20 +18,24 @@ ${answers.description}
 - [Tests](#tests)
 - [Questions](#questions)
 
-## Installation
+<!-- Add installation instructions here -->
+## Installation 
 ${answers.installation}
 
-## Usage
 <!-- Add usage information here -->
+## Usage 
+${answers.usage}
 
 ## License
 This project is licensed under the ${answers.license} License - see the [LICENSE](LICENSE) file for details.
 
-## Contributing
 <!-- Add contributing guidelines here -->
+## Contributing
+${answers.contributing}
 
-## Tests
 <!-- Add information about how to run tests here -->
+## Tests 
+${answers.tests}
 
 ## Questions
 If you have any questions, feel free to contact me:
