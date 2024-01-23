@@ -4,8 +4,9 @@
 # ${answers.title}
 ${renderLicenseBadge(answers.license)}
 
-## Deployed page
-${answers.githubURL}
+## Deployed page URL
+[${answers.githubURL}](https://addy306.github.io/${answers.githubURL}/)
+
 
 ## Description
 ${answers.description}
@@ -14,7 +15,7 @@ ${answers.description}
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contributing)
+- [Contributing](#contribution)
 - [Tests](#tests)
 - [Questions](#questions)
 
@@ -26,12 +27,15 @@ ${answers.installation}
 ## Usage 
 ${answers.usage}
 
+## Webpage Features
+### Screenshots, Videos, GIF
+
 ## License
 This project is licensed under the ${answers.license} License - see the [LICENSE](LICENSE) file for details.
 
 <!-- Add contributing guidelines here -->
 ## Contributing
-${answers.contributing}
+${answers.contribution}
 
 <!-- Add information about how to run tests here -->
 ## Tests 

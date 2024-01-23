@@ -1,18 +1,19 @@
 
-# Readme
-![Github license](https://img.shields.io/badge/license-Apache License 2.0-blue.svg)
+# PROF-README-GENERATOR
+![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## Deployed page
-addy306
+## Deployed page URL
+[prof-README-generator ](https://addy306.github.io/prof-README-generator /)
+
 
 ## Description
-doing good things
+This a command-line application that enables you to generate a Profess
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Contributing](#contributing)
+- [Contributing](#contribution)
 - [Tests](#tests)
 - [Questions](#questions)
 
@@ -22,14 +23,17 @@ npm i
 
 <!-- Add usage information here -->
 ## Usage 
-it is dope
+It is easy to use
+
+## Webpage Features
+### Screenshots, Videos, GIF
 
 ## License
-This project is licensed under the Apache License 2.0 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 <!-- Add contributing guidelines here -->
 ## Contributing
-undefined
+Feel free to contribute to make it better
 
 <!-- Add information about how to run tests here -->
 ## Tests 
@@ -38,4 +42,4 @@ npm test
 ## Questions
 If you have any questions, feel free to contact me:
 - GitHub: [addy306](https://github.com/addy306)
-- Email: Readme@gmail.com
+- Email: adijatworkdoc@gmail.com

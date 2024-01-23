@@ -27,7 +27,7 @@ inquirer
     },
     {
         type: 'input',
-        message: 'What is your Deployed GitHub URL?',
+        message: 'What is your Project Repo Name?',
         name: 'githubURL',
         // Validate user entry to make sure user types an input
         validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
@@ -38,6 +38,19 @@ inquirer
         name: 'description',
         // Validate user entry to make sure user types an input
        validate: (value)=> {if(value){return true} else {return "Please type some text to continue"}},
+      },
+      {
+        type: 'checkbox',
+        name: 'builtwith',
+        message: 'Select built with Languages/App:',
+        choices: [
+          ' HTML',
+          'CSS',
+          'Javascript',
+          'node.js',
+          'npm',  
+        ],
+        default: ['npm', 'Javascript'], // Set default selected options if needed
       },
       {
         type: 'list',
@@ -89,55 +102,10 @@ inquirer
    const readmeContent = generateREADME(answers);
 
    // Write the README file
-   fs.writeFileSync('./generated-readme/README.md', readmeContent, 'utf8');
+   fs.writeFileSync('README.md', readmeContent, 'utf8');
  
    console.log('README.md generated successfully!');
   //console.log(answers)
 }); 
 
- /*  // Function to generate the README content
-function generateREADME(answers) {
-  return `
-# ${answers.title}
-${renderLicenseBadge(answers.license)}
-
-## Description
-${answers.description}
-
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-
-## Installation
-${answers.installation}
-
-## Usage
-<!-- Add usage information here -->
-
-## License
-This project is licensed under the ${answers.license} License - see the [LICENSE](LICENSE) file for details.
-
-## Contributing
-<!-- Add contributing guidelines here -->
-
-## Tests
-<!-- Add information about how to run tests here -->
-
-## Questions
-If you have any questions, feel free to contact me:
-- GitHub: [${answers.githubName}](https://github.com/${answers.githubName})
-- Email: ${answers.email}
-`;
-}
-
-function renderLicenseBadge(license) {
-  if (license !== "none") {
-    return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
-  }
-  return "";
-}
- */
+ 
