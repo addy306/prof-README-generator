@@ -3,7 +3,7 @@
 ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Deployed page URL
-[prof-README-generator ](https://addy306.github.io/prof-README-generator /)
+[prof-README-generator](https://addy306.github.io/prof-README-generator/)
 
 
 ## Description
@@ -38,6 +38,9 @@ Feel free to contribute to make it better
 <!-- Add information about how to run tests here -->
 ## Tests 
 npm test
+
+## Built With
+Javascript,node.js,npm
 
 ## Questions
 If you have any questions, feel free to contact me:
