@@ -102,7 +102,7 @@ inquirer
    const readmeContent = generateREADME(answers);
 
    // Write the README file
-   fs.writeFileSync('README.md', readmeContent, 'utf8');
+   fs.writeFileSync('./generated-readme/README.md', readmeContent, 'utf8');
  
    console.log('README.md generated successfully!');
   //console.log(answers)
